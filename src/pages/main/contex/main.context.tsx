@@ -4,17 +4,17 @@ import { AllColors } from "src/components/healthStatusBlock/types";
 interface MainContextProps {
   temperature: {
     title: string;
-    status: AllColors;
+    status: string;
     params: string;
   };
   pressure: {
     title: string;
-    status: AllColors;
+    status: string;
     params: string;
   };
   onHead: {
     title: string;
-    status: AllColors;
+    status: string;
     params: string;
   };
   children?: ReactNode;

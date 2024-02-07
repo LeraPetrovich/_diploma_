@@ -1,23 +1,21 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
 import { MainContainer, UserItemBox } from "./Main.styles";
 import { Search, UserItem } from "../../components";
-import { items } from "./__mocks__/main.mocks";
+import { items } from "../../constants/main.mocks";
+import useData from "../../hooks/useData";
 
 export const Main: FunctionComponent = () => {
+  const { getData } = useData();
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <MainContainer>
       <Search />
       <UserItemBox>
         {items.map((el, index) => {
-          return (
-            <UserItem
-              key={index}
-              name={el.name}
-              temperature={el.temperature}
-              pressure={el.pressure}
-              onHead={el.onHead}
-            />
-          );
+          return <UserItem key={index} name={el.name} />;
         })}
       </UserItemBox>
     </MainContainer>

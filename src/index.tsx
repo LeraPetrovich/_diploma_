@@ -4,6 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { AuthProvider } from "./provider";
+import { Provider } from "react-redux";
+import { setupStore } from "./store";
+
+const store = setupStore();
+
+export type IRoot = ReturnType<typeof store.getState>;
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -11,7 +17,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </AuthProvider>
   </React.StrictMode>
 );

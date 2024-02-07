@@ -1,6 +1,6 @@
 import { AllColors } from "../healthStatusBlock/types";
 
-interface UserItemProps {
+export interface UserItemProps {
   name: string;
   image?: string;
   id?: number;
@@ -9,17 +9,17 @@ interface UserItemProps {
 export interface UserItemPropsWithContext extends UserItemProps {
   temperature: {
     title: string;
-    status: AllColors;
+    status: string;
     params: string;
   };
   pressure: {
     title: string;
-    status: AllColors;
+    status: string;
     params: string;
   };
   onHead: {
     title: string;
-    status: AllColors;
+    status: string;
     params: string;
   };
 }

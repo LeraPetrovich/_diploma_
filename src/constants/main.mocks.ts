@@ -1,6 +1,4 @@
-import { UserItemPropsWithContext } from "../../../components/user-item/types";
-
-export const items: Array<UserItemPropsWithContext> = [
+export const items = [
   {
     id: 1,
     name: "Лера",

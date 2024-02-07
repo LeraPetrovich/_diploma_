@@ -1,20 +1,25 @@
-import { useSelector } from "react-redux";
-import { flatten } from "lodash";
-import { items } from "src/pages/main/__mocks__/main.mocks";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserItemSlice } from "src/store/reduser/setUserItemsSlice";
+import { items } from "src/constants/main.mocks";
+import { IRootState } from "src/store";
 
 const useData = () => {
-  // const filtStatus = getdata.filter((e) => {
-  //   if(status.length !==0){
-  //     return e.strCategory === status;
-  //   }
-  //   else
-  //   {
-  //     return e.strMeal.toLowerCase().includes(search);
-  //   }
+  const dispatch = useDispatch();
 
-  // })
+  const getData = () => {
+    const helthStatus = items.map((el) => ({
+      temperature: el.temperature,
+      onHead: el.onHead,
+      pressure: el.pressure,
+    }));
+    console.log(dispatch(setUserItemSlice(helthStatus)));
+    dispatch(setUserItemSlice(helthStatus));
+  };
 
-  return {};
+  // const useItems = useSelector((state: IRootState) => state.useItems);
+  // console.log(useItems);
+
+  return { getData };
 };
 
 export default useData;

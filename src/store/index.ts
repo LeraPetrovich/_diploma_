@@ -1,18 +1,16 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-// import searchSlice from './reducer/searchSlice';
-// import statusSlice from './reducer/statusSlice';
-// import barcodeSlice from './reducer/barcodeSlice';
-// import commentSlice from './reducer/commentSlice';
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { userItemsSlice } from "./reduser/setUserItemsSlice";
 
 const rootReducer = combineReducers({
-	// search: searchSlice,
-	// status: statusSlice,
-	// barcode: barcodeSlice,
-	// comment: commentSlice,
+  userItems: userItemsSlice,
 });
 
 export const setupStore = () => {
-	return configureStore({
-		reducer: rootReducer
-	});
+  return configureStore({
+    reducer: rootReducer,
+  });
 };
+
+const store = setupStore();
+
+export type IRootState = ReturnType<typeof store.getState>;
