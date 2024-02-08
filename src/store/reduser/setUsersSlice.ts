@@ -1,8 +1,9 @@
-// setUserItemsSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { cloneDeep } from "lodash";
 
 export type UserItemType = {
+  id: number;
+  name: string;
   temperature: {
     title: string;
     status: string;
@@ -21,22 +22,27 @@ export type UserItemType = {
 };
 
 export interface UserItemsState {
-  userItem: UserItemType[];
+  userItems: UserItemType[];
+  userItem: UserItemType | {};
 }
 
 const initialState: UserItemsState = {
-  userItem: [],
+  userItems: [],
+  userItem: {},
 };
 
 export const userItemsSlice = createSlice({
   name: "results",
   initialState,
   reducers: {
-    setUserItemSlice: (state, action: PayloadAction<UserItemType[]>) => {
+    setUserItemsSlice: (state, action: PayloadAction<UserItemType[]>) => {
+      state.userItems = cloneDeep(action.payload);
+    },
+    setUserItemSlice: (state, action: PayloadAction<UserItemType>) => {
       state.userItem = cloneDeep(action.payload);
     },
   },
 });
 
 export default userItemsSlice.reducer;
-export const { setUserItemSlice } = userItemsSlice.actions;
+export const { setUserItemsSlice, setUserItemSlice } = userItemsSlice.actions;

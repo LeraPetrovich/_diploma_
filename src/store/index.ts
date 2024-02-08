@@ -1,16 +1,15 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { userItemsSlice } from "./reduser/setUserItemsSlice";
+import { configureStore } from "@reduxjs/toolkit";
+import { paramItemsSlice } from "./reduser/setUserParamsSlice";
+import { useSearchSlice } from "./reduser/searchReduserSlice";
+import { userItemsSlice } from "./reduser/setUsersSlice";
 
-const rootReducer = combineReducers({
-  userItems: userItemsSlice,
+const store = configureStore({
+  reducer: {
+    paramItemsReducer: paramItemsSlice.reducer,
+    searchReduser: useSearchSlice.reducer,
+    userItem: userItemsSlice.reducer,
+  },
 });
 
-export const setupStore = () => {
-  return configureStore({
-    reducer: rootReducer,
-  });
-};
-
-const store = setupStore();
-
 export type IRootState = ReturnType<typeof store.getState>;
+export default store;

@@ -5,15 +5,15 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { SignIn } from "../pages";
-import { Main } from "../pages";
+import { SignIn, Main, UserDetails } from "../pages";
 
-const AppRouter: React.FC = () => {
+const AppRouter: React.FunctionComponent = () => {
   return (
     <Router>
       <Routes>
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/" element={<Main />} />
+        <Route path="/:id" element={<UserDetails />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>

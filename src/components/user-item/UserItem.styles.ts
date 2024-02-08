@@ -6,6 +6,7 @@ export const UserItemBox = styled.div`
   display: flex;
   gap: 30px;
   width: 100%;
+  color: black;
 `;
 export const UserInformationBox = styled.div`
   display: flex;
@@ -23,5 +24,3 @@ export const HealthBox = styled.div`
   display: flex;
   gap: 10px;
 `;
-
-

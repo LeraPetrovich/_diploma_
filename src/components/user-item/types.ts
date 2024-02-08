@@ -1,9 +1,8 @@
-import { AllColors } from "../healthStatusBlock/types";
-
 export interface UserItemProps {
   name: string;
   image?: string;
   id?: number;
+  onClick?: () => void;
 }
 
 export interface UserItemPropsWithContext extends UserItemProps {

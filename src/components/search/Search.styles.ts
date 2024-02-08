@@ -1,3 +1,3 @@
 import styled from "styled-components";
 
-export const SearchComponent = styled.input``;
+export const StyledSearchComponent = styled.input``;

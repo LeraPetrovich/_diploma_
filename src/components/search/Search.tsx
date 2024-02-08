@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
-import { SearchComponent } from "./Search.styles";
+import { StyledSearchComponent } from "./Search.styles";
+import { SearchProps } from "./types";
 
-export const Search: FunctionComponent = () => {
-  return <SearchComponent></SearchComponent>;
+export const Search: FunctionComponent<SearchProps> = ({ onChange }) => {
+  return <StyledSearchComponent onChange={onChange} />;
 };
