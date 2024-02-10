@@ -1,7 +1,6 @@
 import { FunctionComponent, useContext, useRef, useEffect } from "react";
 import {
   SignInWrapper,
-  ImageBox,
   SignInContent,
   Title,
   Form,
@@ -9,16 +8,15 @@ import {
   LabelForm,
   InputForm,
   ButtonForm,
+  TitleContent,
+  Image,
 } from "./SignIn.styles";
 import { AuthContext } from "../../provider";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebaseSetup";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
-
-////
-import { checkTokenExpiration } from "../../utils/authUtils";
-//////
+import imageUser from "../../assets/Vector.svg";
 
 export const SignIn: FunctionComponent = () => {
   const user = useContext(AuthContext);
@@ -47,23 +45,13 @@ export const SignIn: FunctionComponent = () => {
   //   await auth.signOut();
   // };
 
-  //////просмотреть как перененсти в appRouter
-
-  useEffect(() => {
-    const shouldRedirect = checkTokenExpiration();
-
-    if (shouldRedirect) {
-      navigate("/sign-in");
-    }
-  }, [navigate]);
-
-  ///////////////
-
   return (
     <SignInWrapper>
-      <ImageBox />
       <SignInContent>
-        <Title>Sign In</Title>
+        <TitleContent>
+          <Image src={imageUser} />
+          <Title>Администратор</Title>
+        </TitleContent>
         <Form>
           <FormBlock>
             <LabelForm htmlFor="login">Email:</LabelForm>
@@ -79,7 +67,7 @@ export const SignIn: FunctionComponent = () => {
             />
           </FormBlock>
           <ButtonForm onClick={signIn} type="button">
-            Submit
+            Войти
           </ButtonForm>
         </Form>
       </SignInContent>

@@ -6,15 +6,44 @@ import {
   Navigate,
 } from "react-router-dom";
 import { SignIn, Main, UserDetails } from "../pages";
+import AuthChecker from "./AuthCheck";
 
 const AppRouter: React.FunctionComponent = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/" element={<Main />} />
-        <Route path="/:id" element={<UserDetails />} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route
+          path="/sign-in"
+          element={
+            <AuthChecker>
+              <SignIn />
+            </AuthChecker>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <AuthChecker>
+              <Main />
+            </AuthChecker>
+          }
+        />
+        <Route
+          path="/:id"
+          element={
+            <AuthChecker>
+              <UserDetails />
+            </AuthChecker>
+          }
+        />
+        {/* <Route
+          path="*"
+          element={
+            <AuthChecker>
+              <Navigate to="/" />
+            </AuthChecker>
+          }
+        /> */}
       </Routes>
     </Router>
   );

@@ -1,25 +1,32 @@
 import React from "react";
 import { UserDetailsBox } from "./UserDetails.styles";
-import { IRootState } from "src/store";
-import { useSelector } from "react-redux";
+import useSearchUsers from "src/hooks/useSearhUsers";
+import { useParams } from "react-router-dom";
 
 export const UserDetails: React.FunctionComponent = () => {
-  const userInf = useSelector((state: IRootState) => state.userItem.userItem);
+  const { filtUsers } = useSearchUsers();
+  const { id } = useParams();
 
-  if (!userInf || !("id" in userInf)) {
-    return <UserDetailsBox>Loading...</UserDetailsBox>;
-  }
+  //создать сторю для хранения данных пользователя по запросу
 
   return (
     <UserDetailsBox>
-      <p>ID: {userInf.id}</p>
-      <p>Name: {userInf.name}</p>
-      <p>Temperature:</p>
-      <ul>
-        <li>Title: {userInf.temperature.title}</li>
-        <li>Status: {userInf.temperature.status}</li>
-        <li>Params: {userInf.temperature.params}</li>
-      </ul>
+      {filtUsers.map((item) => {
+        if (item.id === Number(id)) {
+          return (
+            <div key={item.id}>
+              <p>ID: {item.id}</p>
+              <p>Name: {item.name}</p>
+              <p>Temperature:</p>
+              <ul>
+                <li>Title: {item.temperature.title}</li>
+                <li>Status: {item.temperature.status}</li>
+                <li>Params: {item.temperature.params}</li>
+              </ul>
+            </div>
+          );
+        }
+      })}
     </UserDetailsBox>
   );
 };

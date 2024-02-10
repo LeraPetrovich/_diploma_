@@ -1,66 +1,96 @@
 import { styled } from "styled-components";
-import image from "../../assets/IMAGE.png";
 
 export const SignInWrapper = styled.div`
   display: flex;
   width: 100%;
-  height: 100vh;
-`;
-export const ImageBox = styled.div`
-  flex: 1 1 50%;
-  background-image: url(${image});
+  background: linear-gradient(135deg, rgb(113, 186, 228), rgb(79, 142, 160));
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 `;
 
 export const SignInContent = styled.div`
-  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  background-color: #dff8ff;
+  border-radius: 20px;
+  max-width: 549px;
+  width: 100%;
+  max-height: 549px;
+  height: 100%;
 `;
+
+export const TitleContent = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 80px;
+`;
+
+export const Image = styled.img``;
+
 export const Title = styled.p`
-  font-size: 56px;
+  font-size: 28px;
   font-weight: 400;
-  line-height: 67.2px;
+  line-height: 33.89px;
+  margin: 0px;
+  padding: 0px;
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
+  margin-top: 60px;
+  max-width: 342px;
+  width: 100%;
 `;
 
 export const FormBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  width: 100%;
+  position: relative;
 `;
 
-export const LabelForm = styled.label``;
+export const LabelForm = styled.label`
+  position: absolute;
+  background-color: #dff8ff;
+  padding: 0px 6px;
+  top: -10px;
+  left: 15px;
+  color: #4f8ea0;
+  font-weight: 400;
+  font-size: 16;
+  line-height: 18.96px;
+`;
 
 export const InputForm = styled.input`
-  border: 1px solid #e7e8e3;
+  border: 1px solid #4f8ea0;
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0em;
-  border-radius: 6px;
-  text-align: left;
+  border-radius: 10px;
   color: #65665c;
+  width: calc(100% - 20px);
+  max-width: 342px;
+  height: 45px;
+  background-color: #dff8ff;
+  padding-left: 20px;
 `;
 
 export const ButtonForm = styled.button`
-  background: #cf6f49;
+  background: #4f8ea0;
   color: white;
   border: none;
   margin-top: 20px;
-  border-radius: 6px;
-  font-size: 14px;
+  border-radius: 14px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 30px;
+  line-height: 21.3px;
   letter-spacing: 0em;
   text-align: left;
-  padding: 10px;
+  height: 50px;
   width: 100%;
   display: flex;
   align-items: center;
