@@ -17,6 +17,7 @@ export const ContentContainer = styled.div`
   border: 1px solid #d3e3e866;
   border-radius: 20px;
   gap: 40px;
+  margin-top: 60px;
 `;
 
 export const SortBox = styled.div`

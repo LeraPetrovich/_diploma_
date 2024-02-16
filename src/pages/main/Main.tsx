@@ -1,8 +1,9 @@
-import { FunctionComponent, useEffect, useState } from "react";
-//store
-import { useDispatch } from "react-redux";
-import { setSearchSlice } from "src/store/reduser/searchReduserSlice";
+import { FunctionComponent, useEffect } from "react";
+
+import type { UserItemType } from "src/store/reduser/setUsersSlice";
 import { setUserItemSlice } from "src/store/reduser/setUsersSlice";
+import { useDispatch } from "react-redux";
+
 //components
 import {
   MainContainer,
@@ -12,34 +13,23 @@ import {
   SortDate,
   SortDateText,
 } from "./Main.styles";
-import { Search, UserItem } from "../../components";
+import { UserItem } from "../../components";
 import { Icon } from "src/components/user-item/UserItem.styles";
 import icoSort from "../../assets/fluent_filter-20-regular.svg";
+import { SearchPanel } from "../../components";
 import iconCalendar from "../../assets/Vector (1).svg";
 //hooks
 import useParams from "../../hooks/useParams";
-import { debounce } from "lodash";
 import useSearchUsers from "src/hooks/useSearhUsers";
-
-//type
-import type { UserItemType } from "src/store/reduser/setUsersSlice";
 
 export const Main: FunctionComponent = () => {
   const { getParams } = useParams();
-  const dispatch = useDispatch();
   const { filtUsers } = useSearchUsers();
-
-  const [nameUser, setNameUser] = useState<string>("");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getParams();
   }, []);
-
-  useEffect(() => {
-    dispatch(setSearchSlice(nameUser));
-  }, [nameUser]);
-
-  const handleInput = debounce((e) => setNameUser(e.target.value), 500);
 
   const getUserItemInf = (data: UserItemType) => {
     dispatch(setUserItemSlice(data));
@@ -47,7 +37,7 @@ export const Main: FunctionComponent = () => {
 
   return (
     <MainContainer>
-      <Search onChange={handleInput} />
+      <SearchPanel />
       <ContentContainer>
         <SortBox>
           <Icon src={icoSort}></Icon>
