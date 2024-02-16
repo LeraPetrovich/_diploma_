@@ -1,19 +1,19 @@
 import { useDispatch } from "react-redux";
 import { setUserParamSlice } from "src/store/reduser/setUserParamsSlice";
-import useSearchUsers from "./useSearhUsers";
+import { useSelector } from "react-redux";
+import { IRootState } from "src/store";
 
 const useParams = () => {
   const dispatch = useDispatch();
-  const { filtUsers } = useSearchUsers();
-
-  const getParams = async () => {
-    const helthStatus = filtUsers.map((el) => ({
+  const users = useSelector((state: IRootState) => state.userItem.userItems);
+  const getParams = () => {
+    const healthStatus = users.map((el) => ({
       id: el.id,
       temperature: el.temperature,
       onHead: el.onHead,
       pressure: el.pressure,
     }));
-    await dispatch(setUserParamSlice(helthStatus));
+    dispatch(setUserParamSlice(healthStatus));
   };
 
   return { getParams };

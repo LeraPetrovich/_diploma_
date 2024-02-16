@@ -1,17 +1,18 @@
 import React from "react";
 import { UserDetailsBox } from "./UserDetails.styles";
-import useSearchUsers from "src/hooks/useSearhUsers";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { IRootState } from "src/store";
 
 export const UserDetails: React.FunctionComponent = () => {
-  const { filtUsers } = useSearchUsers();
   const { id } = useParams();
+  const users = useSelector((state: IRootState) => state.userItem.userItems);
 
   //создать сторю для хранения данных пользователя по запросу
 
   return (
     <UserDetailsBox>
-      {filtUsers.map((item) => {
+      {users.map((item) => {
         if (item.id === id) {
           return (
             <div key={item.id}>

@@ -34,13 +34,20 @@ export const SortDate = styled.div`
   padding: 10px;
   border: 1px solid #d3e3e8;
   border-radius: 100px;
+  &:focus-within {
+    border: 1px solid #4f8ea0;
+  }
 `;
-export const SortDateText = styled.p`
+export const SortDateText = styled.div`
   margin: 0;
   padding: 0;
-  color: #95c2cf;
-  font-weight: 400;
-  font-size: 14px;
+  .dataPiker {
+    border: none;
+    box-sizing: border-box;
+    max-width: 71px;
+    outline: none;
+    color: #95c2cf;
+  }
 `;
 
 export const UserItemBox = styled.div`

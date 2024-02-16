@@ -1,6 +1,8 @@
 import { items } from "src/constants/main.mocks";
 import { useSelector } from "react-redux";
 import { IRootState } from "src/store";
+import { useDispatch } from "react-redux";
+import { setUserItemsSlice } from "src/store/reduser/setUsersSlice";
 interface IItems {
   name: string;
   id?: string;
@@ -14,17 +16,22 @@ const useSearchUsers = () => {
   const inputValue = useSelector(
     (state: IRootState) => state.searchReduser.search
   );
+  const dispatch = useDispatch();
 
   const lowerCasedInput = inputValue.toLowerCase();
 
-  const filtUsers = items.filter((item) => {
-    return filterFields.some((field) => {
-      const fieldValue = String(item[field]).toLowerCase();
-      return fieldValue.includes(lowerCasedInput);
+  const setUserItems = () => {
+    const filtUsers = items.filter((item) => {
+      return filterFields.some((field) => {
+        const fieldValue = String(item[field]).toLowerCase();
+        return fieldValue.includes(lowerCasedInput);
+      });
     });
-  });
 
-  return { filtUsers };
+    dispatch(setUserItemsSlice(filtUsers));
+  };
+
+  return { setUserItems };
 };
 
 export default useSearchUsers;

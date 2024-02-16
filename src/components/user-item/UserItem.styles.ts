@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const UserItemBox = styled.div`
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #d3e3e8;
   display: flex;
   justify-content: space-between;

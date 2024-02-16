@@ -3,7 +3,7 @@ export const items = [
     id: "02695566",
     name: "Лера",
     // image,
-    date: "15 ноября 2023 18:19",
+    date: "15 февраля 2024",
     place: "Nepal",
     generalState: "80",
     temperature: { title: "Температура", status: "good", params: "37" },
@@ -13,7 +13,7 @@ export const items = [
   {
     id: "02695567",
     name: "Лиза",
-    date: "15 ноября 2023 18:19",
+    date: "16 февраля 2024",
     place: "Nepal",
     generalState: "30",
     // image,
@@ -24,7 +24,7 @@ export const items = [
   {
     id: "02695568",
     name: "Кристина",
-    date: "15 ноября 2023 18:19",
+    date: "13 февраля 2024",
     place: "Nepal",
     generalState: "20",
     // image,
@@ -32,4 +32,19 @@ export const items = [
     onHead: { title: "Давление", status: "malaise", params: "90/100" },
     pressure: { title: "Наклон", status: "badly", params: "130" },
   },
+];
+
+export const constantsMonths = [
+  "января",
+  "февраля",
+  "марта",
+  "апреля",
+  "мая",
+  "июня",
+  "июля",
+  "августа",
+  "сентября",
+  "октября",
+  "ноября",
+  "декабря",
 ];

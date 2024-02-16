@@ -41,6 +41,7 @@ export const SignIn: FunctionComponent = () => {
       const user = userCredential.user;
       cookies.set("authToken", await user.getIdToken(), { path: "/" });
       navigate("/");
+      //не проходит декод токена 
     } catch (error) {
       console.error(error);
     }

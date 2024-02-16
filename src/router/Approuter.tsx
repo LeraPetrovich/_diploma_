@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,8 +7,27 @@ import {
 } from "react-router-dom";
 import { SignIn, Main, UserDetails } from "../pages";
 import AuthChecker from "./AuthCheck";
+import useSearchUsers from "../hooks/useSearhUsers";
+import useParams from "../hooks/useParams";
+import { useSelector } from "react-redux";
+import { IRootState } from "../store/index";
 
 const AppRouter: React.FunctionComponent = () => {
+  const { setUserItems } = useSearchUsers();
+  const { getParams } = useParams();
+  const users = useSelector((state: IRootState) => state.userItem.userItems);
+  const inputValue = useSelector(
+    (state: IRootState) => state.searchReduser.search
+  );
+
+  useEffect(() => {
+    setUserItems();
+  }, [inputValue]);
+
+  useEffect(() => {
+    getParams();
+  }, [users]);
+
   return (
     <Router>
       <Routes>

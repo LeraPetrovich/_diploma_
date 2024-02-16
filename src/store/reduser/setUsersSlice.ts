@@ -4,6 +4,9 @@ import { cloneDeep } from "lodash";
 export type UserItemType = {
   id: string;
   name: string;
+  date: string;
+  place: string;
+  generalState: string;
   temperature: {
     title: string;
     status: string;
