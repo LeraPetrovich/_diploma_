@@ -1,12 +1,42 @@
 import { styled } from "styled-components";
 
+export const Box = styled.div`
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(135deg, rgb(113, 186, 228), rgb(79, 142, 160));
+`;
+
 export const SignInWrapper = styled.div`
   display: flex;
   width: 100%;
-  background: linear-gradient(135deg, rgb(113, 186, 228), rgb(79, 142, 160));
+
   justify-content: center;
   align-items: center;
   height: 100%;
+`;
+
+export const LogoContent = styled.div`
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+export const TextLogo = styled.p`
+  margin: 0;
+  padding: 0;
+  line-height: 85.33px;
+  color: #f5f5f5;
+  font-size: 70px;
+  font-weight: 400;
+`;
+
+export const ImageLogo = styled.img`
+  width: 65px;
+  height: 65px;
+  margin-top: -22px;
 `;
 
 export const SignInContent = styled.div`

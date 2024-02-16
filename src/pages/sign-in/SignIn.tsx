@@ -10,6 +10,10 @@ import {
   ButtonForm,
   TitleContent,
   Image,
+  LogoContent,
+  TextLogo,
+  Box,
+  ImageLogo,
 } from "./SignIn.styles";
 import { AuthContext } from "../../provider";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -17,6 +21,7 @@ import { auth } from "../../firebaseSetup";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import imageUser from "../../assets/Vector.svg";
+import imageCar from "../../assets/la_truck-moving.svg";
 
 export const SignIn: FunctionComponent = () => {
   const user = useContext(AuthContext);
@@ -46,31 +51,37 @@ export const SignIn: FunctionComponent = () => {
   // };
 
   return (
-    <SignInWrapper>
-      <SignInContent>
-        <TitleContent>
-          <Image src={imageUser} />
-          <Title>Администратор</Title>
-        </TitleContent>
-        <Form>
-          <FormBlock>
-            <LabelForm htmlFor="login">Email:</LabelForm>
-            <InputForm ref={emailRef} type="email" id="login" name="login" />
-          </FormBlock>
-          <FormBlock>
-            <LabelForm htmlFor="password">Password:</LabelForm>
-            <InputForm
-              ref={passwordRef}
-              type="password"
-              id="password"
-              name="password"
-            />
-          </FormBlock>
-          <ButtonForm onClick={signIn} type="button">
-            Войти
-          </ButtonForm>
-        </Form>
-      </SignInContent>
-    </SignInWrapper>
+    <Box>
+      <LogoContent>
+        <TextLogo>TestCar</TextLogo>
+        <ImageLogo src={imageCar} />
+      </LogoContent>
+      <SignInWrapper>
+        <SignInContent>
+          <TitleContent>
+            <Title>Администратор</Title>
+            <Image src={imageUser} />
+          </TitleContent>
+          <Form>
+            <FormBlock>
+              <LabelForm htmlFor="login">Email:</LabelForm>
+              <InputForm ref={emailRef} type="email" id="login" name="login" />
+            </FormBlock>
+            <FormBlock>
+              <LabelForm htmlFor="password">Password:</LabelForm>
+              <InputForm
+                ref={passwordRef}
+                type="password"
+                id="password"
+                name="password"
+              />
+            </FormBlock>
+            <ButtonForm onClick={signIn} type="button">
+              Войти
+            </ButtonForm>
+          </Form>
+        </SignInContent>
+      </SignInWrapper>
+    </Box>
   );
 };

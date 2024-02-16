@@ -12,7 +12,7 @@ export const UserDetails: React.FunctionComponent = () => {
   return (
     <UserDetailsBox>
       {filtUsers.map((item) => {
-        if (item.id === Number(id)) {
+        if (item.id === id) {
           return (
             <div key={item.id}>
               <p>ID: {item.id}</p>

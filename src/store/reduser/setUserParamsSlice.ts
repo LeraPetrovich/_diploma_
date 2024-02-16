@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { cloneDeep } from "lodash";
 
 export type UserParamType = {
-  id: number;
+  id: string;
   temperature: {
     title: string;
     status: string;

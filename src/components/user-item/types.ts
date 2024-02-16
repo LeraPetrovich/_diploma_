@@ -1,7 +1,10 @@
 export interface UserItemProps {
   name: string;
   image?: string;
-  id?: number;
+  id?: string;
+  date?: string;
+  place: string;
+  generalState: string;
   onClick?: () => void;
 }
 
