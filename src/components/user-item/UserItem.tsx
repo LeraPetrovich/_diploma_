@@ -19,7 +19,6 @@ import {
   RowState,
 } from "./UserItem.styles";
 import { UserItemProps } from "./types";
-import userIcon from "./assets/icons8-пользователь-50.png";
 import { HealThStatusBlock } from "../healthStatusBlock/HealthStatusBlock";
 import { useSelector } from "react-redux";
 import { IRootState } from "src/store";
@@ -46,7 +45,6 @@ export const UserItem: FunctionComponent<UserItemProps> = ({
 
   return (
     <UserItemBox onClick={onClick}>
-      {/* <ImageStyled src={image ? image : userIcon}></ImageStyled> */}
       <UserInformationContent>
         <UserInformationBox>
           {id && <UserId>{id}</UserId>}

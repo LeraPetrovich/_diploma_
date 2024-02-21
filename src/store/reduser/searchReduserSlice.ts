@@ -1,9 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { cloneDeep } from "lodash";
-
-export interface SearchState {
-  search: string;
-}
+import { SearchState } from "./types";
 
 const initialState: SearchState = {
   search: "",

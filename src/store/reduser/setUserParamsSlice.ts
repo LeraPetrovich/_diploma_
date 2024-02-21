@@ -1,28 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { cloneDeep } from "lodash";
-
-export type UserParamType = {
-  id: string;
-  temperature: {
-    title: string;
-    status: string;
-    params: string;
-  };
-  pressure: {
-    title: string;
-    status: string;
-    params: string;
-  };
-  onHead: {
-    title: string;
-    status: string;
-    params: string;
-  };
-};
-
-export interface UserParamsState {
-  paramItem: UserParamType[];
-}
+import { UserParamsState, type UserParamType } from "./types";
 
 const initialState: UserParamsState = {
   paramItem: [],

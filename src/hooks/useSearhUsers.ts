@@ -3,13 +3,7 @@ import { useSelector } from "react-redux";
 import { IRootState } from "src/store";
 import { useDispatch } from "react-redux";
 import { setUserItemsSlice } from "src/store/reduser/setUsersSlice";
-interface IItems {
-  name: string;
-  id?: string;
-  date?: string;
-  place: string;
-  generalState: string;
-}
+import { IItems } from "./types";
 
 const useSearchUsers = () => {
   const filterFields: (keyof Partial<IItems>)[] = ["name", "id"];

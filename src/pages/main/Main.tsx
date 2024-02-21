@@ -1,6 +1,6 @@
 import { FunctionComponent, useState } from "react";
 
-import type { UserItemType } from "src/store/reduser/setUsersSlice";
+import type { UserItemType } from "src/store/reduser/types";
 import { setUserItemSlice } from "src/store/reduser/setUsersSlice";
 import { useDispatch } from "react-redux";
 
