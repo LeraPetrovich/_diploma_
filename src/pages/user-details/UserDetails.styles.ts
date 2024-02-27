@@ -66,8 +66,3 @@ export const InformationChartGraph = styled.div`
     margin: 0 20px;
   }
 `;
-
-export const TableBox = styled(UserCardInformationBox)`
-  max-width: none;
-  flex: 1 1 50%;
-`;

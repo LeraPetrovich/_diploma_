@@ -4,7 +4,6 @@ import {
   UserInfBox,
   InformationContainer,
   InformationChartGraph,
-  TableBox,
   LiaisonBox,
   Button,
   ButtonsBox,
@@ -17,6 +16,7 @@ import {
   UserCardInformation,
   FlightCardInformation,
   Chart,
+  Table,
 } from "src/components";
 
 export const UserDetails: React.FunctionComponent = () => {
@@ -57,15 +57,9 @@ export const UserDetails: React.FunctionComponent = () => {
                 </LiaisonBox>
               </UserInfBox>
               <InformationChartGraph>
-                <TableBox />
+                <Table id={item.id} date={item.date} />
                 <Chart data={item.weeklyStatus} />
               </InformationChartGraph>
-              {/* <p>Temperature:</p>
-              <ul>
-                <li>Title: {item.temperature.title}</li>
-                <li>Status: {item.temperature.status}</li>
-                <li>Params: {item.temperature.params}</li>
-              </ul> */}
             </InformationContainer>
           );
         }

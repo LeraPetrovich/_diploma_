@@ -5,3 +5,4 @@ export { SearchPanel } from "./searchPanel/SearchPanel";
 export { UserCardInformation } from "./userCardInformation/UserCardInformation";
 export { FlightCardInformation } from "./flightCardInformation/FlightCardInformation";
 export { Chart } from "./chart/Chart";
+export { Table } from "./table/Table";
