@@ -36,7 +36,7 @@ export interface UserItemsState {
 }
 
 export type UserParamType = {
-  id: string;
+  id?: string;
   temperature: {
     title: string;
     status: string;
