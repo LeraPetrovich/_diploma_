@@ -1,10 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SignIn, Main, UserDetails } from "../pages";
 import AuthChecker from "./AuthCheck";
 import useSearchUsers from "../hooks/useSearhUsers";

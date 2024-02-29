@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   UserDetailsBox,
   UserInfBox,
@@ -7,21 +7,26 @@ import {
   LiaisonBox,
   Button,
   ButtonsBox,
+  IconButton,
 } from "./UserDetails.styles";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { IRootState } from "src/store";
+import phone from "../../assets/phone.svg";
+import camera from "../../assets/camera.svg";
 
 import {
   UserCardInformation,
   FlightCardInformation,
   Chart,
   Table,
+  UserViewCamera,
 } from "src/components";
 
 export const UserDetails: React.FunctionComponent = () => {
   const { id } = useParams();
   const users = useSelector((state: IRootState) => state.userItem.userItems);
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
   return (
     <UserDetailsBox>
@@ -51,8 +56,12 @@ export const UserDetails: React.FunctionComponent = () => {
                     distanceTraveled={item.flightInformation.distanceTraveled}
                   />
                   <ButtonsBox>
-                    <Button>Сделать телефон</Button>
-                    <Button>Сделать связь</Button>
+                    <Button href={`tel:${item.phone}`}>
+                      <IconButton src={phone} />
+                    </Button>
+                    <Button onClick={() => setIsOpenModal(true)}>
+                      <IconButton src={camera} />
+                    </Button>
                   </ButtonsBox>
                 </LiaisonBox>
               </UserInfBox>
@@ -64,6 +73,10 @@ export const UserDetails: React.FunctionComponent = () => {
           );
         }
       })}
+      <UserViewCamera
+        isOpenModal={isOpenModal}
+        onClose={() => setIsOpenModal(false)}
+      />
     </UserDetailsBox>
   );
 };

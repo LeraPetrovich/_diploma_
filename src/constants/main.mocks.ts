@@ -5,6 +5,7 @@ export const items = [
   {
     id: "02695566",
     name: "Лера",
+    phone: "+375336811334",
     image: leraPhoto,
     date: "15 февраля 2024",
     place: "Nepal",
@@ -56,6 +57,7 @@ export const items = [
     id: "02695567",
     name: "Лиза",
     date: "16 февраля 2024",
+    phone: "+375336811334",
     place: "Nepal",
     generalState: "30",
     licenseNumber: "ФИ78965423",
@@ -104,6 +106,7 @@ export const items = [
     id: "02695568",
     name: "Кристина",
     date: "13 февраля 2024",
+    phone: "+375336811334",
     place: "Nepal",
     generalState: "20",
     licenseNumber: "ФИ78965423",

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { UserCardInformationBox } from "src/components/userCardInformation/UserCardInformation.styles";
+import { Icon } from "src/components/user-item/UserItem.styles";
 
 export const UserDetailsBox = styled.div`
   max-width: 1534px;
@@ -32,7 +32,7 @@ export const ButtonsBox = styled.div`
   justify-self: flex-end;
 `;
 
-export const Button = styled.button`
+export const Button = styled.a`
   flex: 1 1 50%;
   border-radius: 14px;
   border: none;
@@ -45,6 +45,7 @@ export const Button = styled.button`
   font-size: 14px;
   background-color: #4f8ea0;
   padding: 12px;
+  text-decoration: none;
 `;
 
 export const UserInfBox = styled.div`
@@ -65,4 +66,9 @@ export const InformationChartGraph = styled.div`
     flex-wrap: wrap;
     margin: 0 20px;
   }
+`;
+
+export const IconButton = styled(Icon)`
+  width: 30px;
+  height: 30px;
 `;

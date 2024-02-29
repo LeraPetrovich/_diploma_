@@ -6,3 +6,4 @@ export { UserCardInformation } from "./userCardInformation/UserCardInformation";
 export { FlightCardInformation } from "./flightCardInformation/FlightCardInformation";
 export { Chart } from "./chart/Chart";
 export { Table } from "./table/Table";
+export { UserViewCamera } from "./user-view-camera/UserViewCamera";

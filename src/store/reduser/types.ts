@@ -4,6 +4,7 @@ export type UserItemType = {
   id: string;
   name: string;
   date: string;
+  phone: string;
   place: string;
   generalState: string;
   image?: string;
