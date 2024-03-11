@@ -16,6 +16,8 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
 import Swal from "sweetalert2";
 
+//нужно прописать обновление стори то перезахода в систему
+
 export const SettingsProfile: React.FC = () => {
   const { getUserInfoFromLocalStorage } = useLocalStorage();
   const [userInf, setUserInf] = useState<User | null>();
