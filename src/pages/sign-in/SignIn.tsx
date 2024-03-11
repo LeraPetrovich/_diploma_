@@ -15,21 +15,23 @@ import {
   Box,
   ImageLogo,
 } from "./SignIn.styles";
-import { AuthContext } from "../../provider";
+// import { AuthContext } from "../../provider";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebaseSetup";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import imageUser from "../../assets/Vector.svg";
 import imageCar from "../../assets/la_truck-moving.svg";
+import useLocalStorage from "src/hooks/useLocalStorage";
+// import { updateProfile } from "firebase/auth";
 
 export const SignIn: FunctionComponent = () => {
-  const user = useContext(AuthContext);
-
+  // const user = useContext(AuthContext);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const cookies = new Cookies();
+  const { saveUserInfoToLocalStorage } = useLocalStorage();
 
   const signIn = async () => {
     try {
@@ -39,9 +41,23 @@ export const SignIn: FunctionComponent = () => {
         passwordRef.current!.value
       );
       const user = userCredential.user;
+      
       cookies.set("authToken", await user.getIdToken(), { path: "/" });
       navigate("/");
-      //не проходит декод токена
+      //тупое решение по смене displayName
+      // const newDisplayName = "Валерия Петрович";
+      // updateProfile(user, {
+      //   displayName: newDisplayName,
+      // })
+      //   .then(() => {
+      //     console.log("DisplayName успешно обновлен.");
+      //   })
+      //   .catch((error: any) => {
+      //     console.error("Ошибка при обновлении DisplayName:", error);
+      //   });
+      if (user !== null) {
+        saveUserInfoToLocalStorage(user.email, user.displayName);
+      }
     } catch (error) {
       console.error(error);
     }

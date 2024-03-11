@@ -52,7 +52,7 @@ const AppRouter: React.FunctionComponent = () => {
           }
         />
         <Route
-          path="/:settings"
+          path="/settings"
           element={
             <AuthChecker>
               <SettingsProfile />

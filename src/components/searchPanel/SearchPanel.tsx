@@ -29,7 +29,10 @@ export const SearchPanel: React.FC = () => {
     <SearchPanelBox>
       <SearchBox>
         <Icon src={searchIcon} />
-        <Search onChange={handleInput} />
+        <Search
+          onChange={handleInput}
+          placeholder="Введите имя или серийный номер водителя"
+        />
       </SearchBox>
       <AdminSettingsBox>
         <Link to={"/settings"}>

@@ -2,11 +2,11 @@ import { FunctionComponent } from "react";
 import { StyledSearchComponent } from "./Search.styles";
 import { SearchProps } from "./types";
 
-export const Search: FunctionComponent<SearchProps> = ({ onChange }) => {
+export const Search: FunctionComponent<SearchProps> = ({
+  onChange,
+  placeholder,
+}) => {
   return (
-    <StyledSearchComponent
-      placeholder="Введите имя или серийный номер водителя"
-      onChange={onChange}
-    />
+    <StyledSearchComponent placeholder={placeholder} onChange={onChange} />
   );
 };
