@@ -30,6 +30,6 @@
 },
   "include": [
     "src/**/*.ts", "config/jest/**/*.ts"
-, "src/pages/main/contex/main.context.tsx"  ],
+, "src/pages/main/contex/main.context.tsx", "src/components/paginateItems/PaginteItems.tsx"  ],
   "exclude": ["build", "node_modules", "config"]
 }

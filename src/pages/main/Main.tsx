@@ -1,24 +1,22 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState, useEffect } from "react";
 
-import type { UserItemType } from "src/store/reduser/types";
-import { setUserItemSlice } from "src/store/reduser/setUsersSlice";
 import { useDispatch } from "react-redux";
 
 //components
 import {
   MainContainer,
-  UserItemBox,
   ContentContainer,
   SortBox,
   SortDate,
   SortDateText,
 } from "./Main.styles";
-import { UserItem } from "../../components";
+
 import { Icon } from "src/components/user-item/UserItem.styles";
 import icoSort from "../../assets/fluent_filter-20-regular.svg";
 import { SearchPanel } from "../../components";
 import iconCalendar from "../../assets/Vector (1).svg";
 import DatePicker from "react-datepicker";
+import { Pagination } from "src/components/paginateItems/PaginteItems";
 //hooks
 import { useSelector } from "react-redux";
 import { IRootState } from "src/store";
@@ -31,10 +29,6 @@ export const Main: FunctionComponent = () => {
   let users = useSelector((state: IRootState) => state.userItem.userItems);
   const dispatch = useDispatch();
   const [startDate, setStartDate] = useState(new Date());
-
-  const getUserItemInf = (data: UserItemType) => {
-    dispatch(setUserItemSlice(data));
-  };
 
   const reversUsers = () => {
     const reversedUsers = [...users].reverse();
@@ -71,25 +65,7 @@ export const Main: FunctionComponent = () => {
             <Icon src={iconCalendar}></Icon>
           </SortDate>
         </SortBox>
-        <UserItemBox>
-          {users.length > 0 ? (
-            users.map((el) => {
-              return (
-                <UserItem
-                  onClick={() => getUserItemInf(el)}
-                  id={el.id}
-                  key={el.id}
-                  name={el.name}
-                  date={el.date}
-                  place={el.place}
-                  generalState={el.generalState}
-                />
-              );
-            })
-          ) : (
-            <p>Пользователь не был найден</p>
-          )}
-        </UserItemBox>
+        <Pagination itemsPerPage={3} items={users} />
       </ContentContainer>
     </MainContainer>
   );

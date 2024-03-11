@@ -6,6 +6,7 @@ import useSearchUsers from "../hooks/useSearhUsers";
 import useParams from "../hooks/useParams";
 import { useSelector } from "react-redux";
 import { IRootState } from "../store/index";
+import { SettingsProfile } from "../pages";
 
 const AppRouter: React.FunctionComponent = () => {
   const { setUserItems } = useSearchUsers();
@@ -47,6 +48,14 @@ const AppRouter: React.FunctionComponent = () => {
           element={
             <AuthChecker>
               <UserDetails />
+            </AuthChecker>
+          }
+        />
+        <Route
+          path="/:settings"
+          element={
+            <AuthChecker>
+              <SettingsProfile />
             </AuthChecker>
           }
         />

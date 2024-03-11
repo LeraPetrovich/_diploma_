@@ -14,6 +14,7 @@ import adminImage from "../../assets/adminImage.png";
 import settingsIcon from "../../assets/material-symbols_settings.svg";
 import { Icon } from "../user-item/UserItem.styles";
 import searchIcon from "../../assets/searchIcon.svg";
+import { Link } from "react-router-dom";
 
 export const SearchPanel: React.FC = () => {
   const [nameUser, setNameUser] = useState<string>("");
@@ -31,7 +32,9 @@ export const SearchPanel: React.FC = () => {
         <Search onChange={handleInput} />
       </SearchBox>
       <AdminSettingsBox>
-        <SettingIcon src={settingsIcon} />
+        <Link to={"/settings"}>
+          <SettingIcon src={settingsIcon} />
+        </Link>
         <AdminImage src={adminImage} />
       </AdminSettingsBox>
     </SearchPanelBox>

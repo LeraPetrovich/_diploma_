@@ -49,10 +49,3 @@ export const SortDateText = styled.div`
     color: #95c2cf;
   }
 `;
-
-export const UserItemBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-`;

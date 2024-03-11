@@ -151,6 +151,153 @@ export const items = [
       },
     ],
   },
+  {
+    id: "02695569",
+    name: "Кира",
+    date: "13 февраля 2024",
+    phone: "+375336811334",
+    place: "Nepal",
+    generalState: "20",
+    licenseNumber: "ФИ78965423",
+    categories: "A, B",
+    dateBirth: "18.08.2003",
+    // image,
+    temperature: { title: "Температура", status: "good", params: "36,6" },
+    onHead: { title: "Давление", status: "malaise", params: "90/100" },
+    pressure: { title: "Наклон", status: "badly", params: "130" },
+    flightInformation: {
+      carBrand: "Volvo FH",
+      carNumber: "AB321196",
+      startFlight: "14.09.2023 14:49",
+      endFlight: "18.11.2023 15.00",
+      dispatchPoint: "Москва",
+      destination: "Вена",
+      coordinates: "52.5659898, 28.79556",
+      recordedTime: "15 ноября 2023 18:19",
+      distanceTraveled: "30",
+    },
+    weeklyStatus: [
+      //состояние за последнюю рабочую неделю
+      {
+        day: "Понедельник",
+        status: 80,
+      },
+      {
+        day: "Вторник",
+        status: 70,
+      },
+      {
+        day: "Среда",
+        status: 60,
+      },
+      {
+        day: "Четверг",
+        status: 80,
+      },
+      {
+        day: "Пятница",
+        status: 80,
+      },
+    ],
+  },
+  {
+    id: "026955610",
+    name: "Света",
+    date: "13 февраля 2024",
+    phone: "+375336811334",
+    place: "Nepal",
+    generalState: "20",
+    licenseNumber: "ФИ78965423",
+    categories: "A, B",
+    dateBirth: "18.08.2003",
+    // image,
+    temperature: { title: "Температура", status: "good", params: "36,6" },
+    onHead: { title: "Давление", status: "malaise", params: "90/100" },
+    pressure: { title: "Наклон", status: "badly", params: "130" },
+    flightInformation: {
+      carBrand: "Volvo FH",
+      carNumber: "AB321196",
+      startFlight: "14.09.2023 14:49",
+      endFlight: "18.11.2023 15.00",
+      dispatchPoint: "Москва",
+      destination: "Вена",
+      coordinates: "52.5659898, 28.79556",
+      recordedTime: "15 ноября 2023 18:19",
+      distanceTraveled: "30",
+    },
+    weeklyStatus: [
+      //состояние за последнюю рабочую неделю
+      {
+        day: "Понедельник",
+        status: 80,
+      },
+      {
+        day: "Вторник",
+        status: 70,
+      },
+      {
+        day: "Среда",
+        status: 60,
+      },
+      {
+        day: "Четверг",
+        status: 80,
+      },
+      {
+        day: "Пятница",
+        status: 80,
+      },
+    ],
+  },
+  {
+    id: "026955611",
+    name: "Дана",
+    date: "13 февраля 2024",
+    phone: "+375336811334",
+    place: "Nepal",
+    generalState: "20",
+    licenseNumber: "ФИ78965423",
+    categories: "A, B",
+    dateBirth: "18.08.2003",
+    // image,
+    temperature: { title: "Температура", status: "good", params: "36,6" },
+    onHead: { title: "Давление", status: "malaise", params: "90/100" },
+    pressure: { title: "Наклон", status: "badly", params: "130" },
+    flightInformation: {
+      carBrand: "Volvo FH",
+      carNumber: "AB321196",
+      startFlight: "14.09.2023 14:49",
+      endFlight: "18.11.2023 15.00",
+      dispatchPoint: "Москва",
+      destination: "Вена",
+      coordinates: "52.5659898, 28.79556",
+      recordedTime: "15 ноября 2023 18:19",
+      distanceTraveled: "30",
+    },
+    weeklyStatus: [
+      //состояние за последнюю рабочую неделю
+      {
+        day: "Понедельник",
+        status: 80,
+      },
+      {
+        day: "Вторник",
+        status: 70,
+      },
+      {
+        day: "Среда",
+        status: 60,
+      },
+      {
+        day: "Четверг",
+        status: 80,
+      },
+      {
+        day: "Пятница",
+        status: 80,
+      },
+    ],
+  },
 ];
 
 export const constantsMonths = [
